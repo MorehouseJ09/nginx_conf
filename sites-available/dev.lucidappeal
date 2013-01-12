@@ -1,0 +1,47 @@
+server {
+    listen 8080;	
+	server_name dev.lucidappeal;
+    root /Users/MorehouseJ09/Documents/production_development/lucid_appeal/lucidappeal_cms/public;
+    
+    # enable passenger
+    passenger_enabled on;
+
+	# proxy certain requests to nba
+	location /proxy/nba/ {
+            rewrite ^/proxy/nba/(.*)$ /$1 break;
+            proxy_pass      http://data.nba.com;
+            proxy_set_header Host data.nba.com;
+            proxy_redirect     off;
+    }
+
+    # 
+    location /proxy/wnba/ {
+            rewrite ^/proxy/wnba/(.*)$ /$1 break;
+            proxy_pass      http://data.wnba.com;
+            proxy_set_header Host data.wnba.com;
+            proxy_redirect     off;
+    }
+
+
+    # 
+    location /cache/api/v3/ {
+
+    		#browser 
+            add_header  Cache-Control   "max-age=0, private, must-revalidate";
+            try_files $uri.html $uri $uri/index.html =404;
+    }
+
+
+    # ensure that only get requests are cached
+	if ($request_method != GET) {
+		break;
+	}
+
+	# make sure that cache is in /cache
+	if (-f $document_root/cache$uri.html) {
+		rewrite (.*) /cache$1 break;
+	}
+
+	# set default rails environment
+    rails_env development;
+}

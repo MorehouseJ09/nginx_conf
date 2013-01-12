@@ -1,0 +1,13 @@
+server {
+	
+	listen 8080;
+	server_name prospero;
+	root /Users/MorehouseJ09/Documents/production_development/prospero/current
+	
+	location / {
+
+		root html;
+		index index.html
+
+	}
+}
