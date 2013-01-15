@@ -1,10 +1,15 @@
 server {
-    listen 8080;	
-	server_name dev.lucidappeal;
-    root /Users/MorehouseJ09/Documents/production_development/lucid_appeal/lucidappeal_cms/public;
     
-    # enable passenger
-    passenger_enabled on;
+    listen 8080;    
+	server_name dev.lucidappeal;
+     
+
+    location / {
+
+
+        proxy_pass http://localhost:3000;
+
+    }
 
 	# proxy certain requests to nba
 	location /proxy/nba/ {
@@ -42,6 +47,4 @@ server {
 		rewrite (.*) /cache$1 break;
 	}
 
-	# set default rails environment
-    rails_env development;
 }
