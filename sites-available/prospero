@@ -1,27 +1,30 @@
 server {
 	
-	listen 8080;
-	server_name prospero;
+	listen 80;
+	server_name prospero.jonmorehouse.me;
 
 	location /resources/ {
 
-		root /Users/MorehouseJ09/Documents/production_development/prospero/current/;
+		root /home/ubuntu/prospero/;
+	
 	}
 
 	location /property_images/ {
 
-		root /Users/MorehouseJ09/Documents/production_development/prospero/current/;
-	}
+                root /home/ubuntu/prospero/;
+	
 
+	}
 	location /property_pdfs/ {
+	
+                root /home/ubuntu/prospero/;
 
-		root /Users/MorehouseJ09/Documents/production_development/prospero/current/;
 	}
-
 
 	location / {
 
         proxy_pass http://localhost:8888;
         include /usr/local/nginx/conf/proxy.conf;
+
 	}
 }
