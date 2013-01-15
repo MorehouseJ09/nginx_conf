@@ -1,0 +1,11 @@
+fastcgi_params
+koi-utf
+koi-win
+mime.types
+naxsi.rules
+naxsi_core.rules
+nginx.conf
+proxy_params
+scgi_params
+uwsgi_params
+win-utf
