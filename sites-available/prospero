@@ -8,6 +8,11 @@ server {
 		root /Users/MorehouseJ09/Documents/production_development/prospero/current/;
 	}
 
+	location /property_slideshow_images/ {
+
+		root /Users/MorehouseJ09/Documents/production_development/prospero/current/;
+	}
+
 	location /property_images/ {
 
 		root /Users/MorehouseJ09/Documents/production_development/prospero/current/;
