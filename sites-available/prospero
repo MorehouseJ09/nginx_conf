@@ -29,7 +29,6 @@ server {
 		root /Users/MorehouseJ09/Documents/production_development/prospero/current/;
 	}
 
-
 	location / {
 
         proxy_pass http://localhost:8888;

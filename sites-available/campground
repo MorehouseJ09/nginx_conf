@@ -8,9 +8,9 @@ server {
 	# currently, we want to run all of these as proxies to our rails server, can fix this later
 	location / {
 
-		# autoindex on;
-		# root /Users/MorehouseJ09/Documents/production_development/chilliwack;
-		proxy_pass http://127.0.0.1:3000;
+		autoindex on;
+		root /Users/MorehouseJ09/Documents/production_development/chilliwack;
+		# proxy_pass http://127.0.0.1:3000;
 
 	}
 }
