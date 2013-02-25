@@ -1,4 +1,4 @@
-NGinx Configuration Repository
+Nginx Configuration Repository
 =
 
 This is a general repository for all of my nginx notes and configuration files.
@@ -12,5 +12,11 @@ Some Issues to Resolve
 =
 
 How to run multiple versions of rvm at the same time without having to instantiate multiple servers?
+
+Best practices for proxying
+
+Try files for S3 delivery of certain assets
+
+Fix flashquest rails delivery / proxy
 
 
