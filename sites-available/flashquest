@@ -10,3 +10,17 @@ server {
         include /usr/local/nginx/conf/proxy.conf;
 	}
 }
+
+server {
+	
+	listen 8080;
+
+	server_name temp;
+
+	location / {
+
+		proxy_pass http://0.0.0:4567;
+		include /usr/local/nginx/conf/proxy.conf;
+	}
+
+}
