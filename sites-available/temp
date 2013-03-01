@@ -1,0 +1,38 @@
+server {
+	
+	listen 80;
+	server_name temp.jonmorehouse.me;
+	
+	location / {
+		
+		autoindex on;	
+		root /home/ubuntu/temp;		
+
+	}
+}
+
+server {
+	
+	listen 80;
+	server_name flashquest.jonmorehouse.me;
+	
+	location / {
+
+		root /home/ubuntu/flashquest;
+	
+	}
+
+}
+
+server {
+	
+	listen 80;
+	server_name demo.jonmorehouse.me;
+	
+	location / {
+
+		root /home/ubuntu/demo/build;
+	
+	}
+
+}

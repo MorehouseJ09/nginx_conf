@@ -15,6 +15,7 @@ server {
 	
 
 	}
+	
 	location /property_pdfs/ {
 	
                 root /home/ubuntu/prospero/;
@@ -24,7 +25,7 @@ server {
 	location / {
 
         proxy_pass http://localhost:8888;
-        include /usr/local/nginx/conf/proxy.conf;
+        include /etc/nginx/conf/proxy.conf;
 
 	}
 }
