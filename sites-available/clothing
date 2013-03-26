@@ -1,0 +1,16 @@
+server {
+	
+	listen 8080;
+	server_name clothing;
+
+	location / {
+
+		# use default rails server host
+		proxy_pass http://localhost:3000;
+		
+		# include our local nginx server configuration files
+		include /usr/local/nginx/conf/proxy.conf; 
+
+	}
+
+}
