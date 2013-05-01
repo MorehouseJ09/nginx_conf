@@ -21,8 +21,9 @@ server {
 	# in the future this will be done through express / node / socket.io
 	location /api/ {
 
-		proxy_pass http://127.0.0.1:3300;
-		include /usr/local/nginx/conf/proxy.conf;
+		# set this up with a trailing slash so only the things after the api point go to the rails app!
+		proxy_pass http://127.0.0.1:3300/;
+		# include /usr/local/nginx/conf/proxy.conf;
 
 	}
 
