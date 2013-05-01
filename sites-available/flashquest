@@ -15,8 +15,18 @@ server {
 	
 	listen 8080;
 
-	server_name business.flashquest;
+	server_name business;
 
+	# any api calls need to be redirected to the flashquest backend api with rails
+	# in the future this will be done through express / node / socket.io
+	location /api/ {
+
+		proxy_pass http://127.0.0.1:3300;
+		include /usr/local/nginx/conf/proxy.conf;
+
+	}
+
+	# proxy our main app stuff here
 	location / {
 
 		proxy_pass http://127.0.0.1:3400;
